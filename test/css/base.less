@@ -1,0 +1,172 @@
+@import "animations.less";
+
+/* корпоративные цвета */
+@corp_red:    #810c17;
+@corp_yellow: #fcf1ce;
+@corp_black:  #050505;
+@corp_gray:   #818487;
+
+// цвета задач
+@open: blue;
+@closed: green;
+@not_assigned: orange;
+
+// цвета приоритетов
+@pri_low: #a8bc50;
+@pri_default: #e0ac59;
+@pri_high: @corp_red;
+
+/* Корпоративные шрифты */
+@font-face { font-family: markizDeSad;   src: url(/media/fonts/markiz_de_sad_script.woff); }
+@font-face { font-family: popularScript; src: url(/media/fonts/popular_script.woff);       }
+@font-face { font-family: baskerville;   src: url(/media/fonts/baskerville_win95bt.woff);  }
+
+/* значения размеров изображений */
+@icon_width : 32px;
+@icon_height: 32px;
+@thumbnail_width : 96px;
+@thumbnail_height: 96px;
+@preview_width : 320px;
+@preview_height: 240px;
+@full_scaled_width : 800px;
+@full_scaled_height: 600px;
+
+/* ------------------- */
+
+@default_gradient_start:   #ffffff;
+@default_gradient_stop:    #cccccc;
+@default_border_radius:    5px;
+@default_background_color: #eff0ef;
+@default_shadow_color:     @corp_gray;
+@default_content_width:    95%;
+
+.rounded_block (@tl_radius: @default_border_radius, @tr_radius: @default_border_radius, @br_radius: @default_border_radius, @bl_radius: @default_border_radius)
+{
+    border-radius        : @tl_radius @tr_radius @br_radius @bl_radius;
+    -webkit-border-radius: @tl_radius @tr_radius @br_radius @bl_radius;
+    -moz-border-radius   : @tl_radius @tr_radius @br_radius @bl_radius;
+    -ms-border-radius    : @tl_radius @tr_radius @br_radius @bl_radius;
+    -o-border-radius     : @tl_radius @tr_radius @br_radius @bl_radius;
+}
+
+.rounded (@radius: @default_border_radius)
+{
+    .rounded_block(@radius, @radius, @radius, @radius);
+}
+
+.transform(@what)
+{
+    -moz-transform   : @what;
+    -ms-transform    : @what;
+    -webkit-transform: @what;
+    -o-transform     : @what;
+    transform        : @what;
+}
+
+.transformOrigin(@what)
+{
+    -moz-transform-origin   : @what;
+    -ms-transform-origin    : @what;
+    -webkit-transform-origin: @what;
+    -o-transform-origin     : @what;
+    transform-origin        : @what;
+}
+
+.transformStyle(@what)
+{
+    -moz-transform-style   : @what;
+    -ms-transform-style    : @what;
+    -webkit-transform-style: @what;
+    -o-transform-style     : @what;
+    transform-style        : @what;
+}
+
+.perspective(@what)
+{
+    -moz-perspective   : @what;
+    -ms-perspective    : @what;
+    -webkit-perspective: @what;
+    -o-perspective     : @what;
+    perspective        : @what;
+}
+
+.transition(@what)
+{
+    -webkit-transition: @what;
+    -moz-transition   : @what;
+    -o-transition     : @what;
+    -ms-transition    : @what;
+    transition        : @what;
+}
+
+.shadowed_block(@horizontal_length: 3px, @verical_length: 3px, @blur_radius: 3px, @spread: 3px, @shadow_color: @default_shadow_color) {
+    box-shadow:         @horizontal_length @verical_length @blur_radius @spread @shadow_color;
+    -moz-box-shadow:    @horizontal_length @verical_length @blur_radius @spread @shadow_color;
+    -webkit-box-shadow: @horizontal_length @verical_length @blur_radius @spread @shadow_color;
+    -o-box-shadow:      @horizontal_length @verical_length @blur_radius @spread @shadow_color;
+}
+
+.gradiented_block(@start: @default_gradient_start, @stop: @default_gradient_stop) {
+    background: @default_background_color;
+    background: linear-gradient(@start, @stop);
+    background: -moz-linear-gradient(@start, @stop);
+    background: -webkit-linear-gradient(@start, @stop);
+    background: -o-linear-gradient(@start, @stop);
+}
+
+.radial_gradiented(@start: @default_gradient_start, @stop: @default_gradient_stop) {
+    background: @default_background_color;
+    background: radial-gradient(circle at center, @start, @stop);
+    background: -moz-radial-gradient(circle at center, @start, @stop);
+    background: -webkit-radial-gradient(circle at center, @start, @stop);
+    background: -o-radial-gradient(circle at center, @start, @stop);
+}
+
+.shadowed_text(@shadow_color: @default_shadow_color) {
+    text-shadow: 2px 2px 2px @shadow_color;
+}
+
+.animate()
+{
+    .transition(all 0.3s ease-out);
+}
+
+.opacity(@level)
+{
+    -moz-opacity: @level;
+    -webkit-opacity: @level;
+    -o-opacity: @level;
+    opacity: @level;
+
+}
+.top_block_opacity()
+{
+    .opacity(0.9);
+    &:hover
+    {
+        .opacity(1.0);
+    }
+}
+/* fonts */
+
+.defaultFont(@fontSize: 12pt)       { font-family: Verdana;       font-size: @fontSize; }
+.markizScriptFont(@fontSize: 12pt)  { font-family: markizDeSad;   font-size: @fontSize; }
+.popularScriptFont(@fontSize: 12pt) { font-family: popularScript; font-size: @fontSize; }
+.baskervilleFont(@fontSize: 12pt)   { font-family: baskerville;   font-size: @fontSize; }
+
+/* align */
+
+.alignBlockCenter() {
+    margin-left:auto;
+    margin-right:auto;
+    vertical-align: middle;
+}
+
+.cellborder(@color: @corp_gray)
+{
+    border-style: solid;
+    border-width: 1px;
+    border-color: @corp_gray;
+}
+
+/* icons */

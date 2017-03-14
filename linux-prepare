@@ -1,0 +1,15 @@
+#!/bin/bash
+
+. ./linux-environment
+
+mkdir -p ${dev_root_path}
+mkdir -p ${build_path}
+#mkdir -p ${install_path}
+#mkdir -p ${conf_path}
+
+mkdir -p "${ide_build_path}/docflow"
+
+#cp config/app.conf ${conf_path}/
+
+#rm -f ../work
+#ln -s ${root_path} ../work

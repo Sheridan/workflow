@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rm ./ldaptest 
+g++ -o ldaptest -Wall -W -lldap -llber -lsasl2  ldap.cpp
+./ldaptest 

@@ -1,0 +1,79 @@
+body
+{
+    opacity:    0.95;
+    .radial_gradiented;
+    .defaultFont(14px);
+    color: @corp_black;
+
+    header
+    {
+        .alignBlockCenter;
+        width: @default_content_width;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    main
+    {
+        .alignBlockCenter;
+        width: @default_content_width;
+    }
+    footer
+    {
+        .alignBlockCenter;
+        width: @default_content_width;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 8pt;
+        text-align: center;
+    }
+}
+
+a
+{
+    text-decoration: none;
+    color: @corp_red;
+    &:visited
+    {
+        color: darken(@corp_red, 10%);
+    }
+    &:hover
+    {
+        color: saturate(@corp_red, 10%);
+/*        .shadowed_text;*/
+    }
+    &:active
+    {
+        color: lighten(@corp_red, 10%);
+/*        .shadowed_text;*/
+    }
+    &.onclick
+    {
+        cursor: pointer;
+    }
+}
+
+table
+{
+    &.head
+    {
+        width: 100%;
+        tr
+        {
+            td
+            {
+                .alignBlockCenter;
+                border-style: none;
+                &.logo
+                {
+                    width: 32px;
+                    height: 32px;
+                }
+                &.title
+                {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,98 @@
+.transform(@what)
+{
+    transform:          @what;
+    -ms-transform:      @what;
+    -webkit-transform:  @what;
+    -o-transform:       @what;
+    -moz-transform:     @what;
+}
+
+@keyframes rotate
+{
+    from { .transform(rotate(0deg  )); }
+    to   { .transform(rotate(359deg)); }
+}
+@-webkit-keyframes rotate_webkit
+{
+    from { .transform(rotate(0deg  )); }
+    to   { .transform(rotate(359deg)); }
+}
+@-moz-keyframes rotate_moz
+{
+    from { .transform(rotate(0deg  )); }
+    to   { .transform(rotate(359deg)); }
+}
+@-o-keyframes rotate_o
+{
+    from { .transform(rotate(0deg  )); }
+    to   { .transform(rotate(359deg)); }
+}
+
+.rotate()
+{
+    -webkit-animation: rotate_webkit 7s infinite linear;
+    -moz-animation   : rotate_moz 7s infinite linear;
+    -o-animation     : rotate_o 7s infinite linear;
+    animation        : rotate 7s infinite linear;
+}
+
+@keyframes slide
+{
+    from { .transform(translateX(-50px)); }
+    to   { .transform(translateX(0px)); }
+}
+@-webkit-keyframes slide_webkit
+{
+    from { .transform(translateX(-50px)); }
+    to   { .transform(translateX(0px)); }
+}
+@-moz-keyframes slide_moz
+{
+    from { .transform(translateX(-50px)); }
+    to   { .transform(translateX(0px)); }
+}
+@-o-keyframes slide_o
+{
+    from { .transform(translateX(-50px)); }
+    to   { .transform(translateX(0px)); }
+}
+
+.slide()
+{
+    -webkit-animation: slide_webkit 1s;
+    -moz-animation   : slide_moz 1s;
+    -o-animation     : slide_o 1s;
+    animation        : slide 1s;
+}
+
+.makeTransformAnimation(@transformFrom, @transformTo, @duration)
+{
+    @keyframes t-base
+    {
+        from { .transform(@transformFrom); }
+        to   { .transform(@transformTo); }
+    }
+    @-webkit-keyframes t-webkit
+    {
+        from { .transform(@transformFrom); }
+        to   { .transform(@transformTo); }
+    }
+    @-moz-keyframes t-moz
+    {
+        from { .transform(@transformFrom); }
+        to   { .transform(@transformTo); }
+    }
+    @-o-keyframes t-o
+    {
+        from { .transform(@transformFrom); }
+        to   { .transform(@transformTo); }
+    }
+    -webkit-animation: t-webkit @duration;
+    -moz-animation   : t-moz @duration;
+    -o-animation     : t-o @duration;
+    animation        : t-base @duration;
+}
+
+
+
+

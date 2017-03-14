@@ -1,0 +1,129 @@
+@import "base.less";
+
+body
+{
+    opacity:    0.95;
+    .radial_gradiented;
+    /*background-image: url(/data/media/img/000/000/000/000/rozy/full.jpg);
+    background-attachment: fixed;
+    background-size: cover;*/
+    .defaultFont;
+    color: @corp_black;
+
+    header
+    {
+        .alignBlockCenter;
+        width: @default_content_width;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    main
+    {
+        .alignBlockCenter;
+        width: @default_content_width;
+/*        border-left-style: solid;
+        border-left-width: 1px;
+        border-left-color: @corp_gray;
+        border-right-style: solid;
+        border-right-width: 1px;
+        border-right-color: @corp_gray;*/
+    }
+    footer
+    {
+        .alignBlockCenter;
+        width: @default_content_width;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 8pt;
+        text-align: center;
+    }
+}
+
+a
+{
+    text-decoration: none;
+    color: @corp_red;
+    &:visited
+    {
+        color: darken(@corp_red, 10%);
+    }
+    &:hover
+    {
+        color: saturate(@corp_red, 10%);
+        .shadowed_text;
+    }
+    &:active
+    {
+        color: lighten(@corp_red, 10%);
+        .shadowed_text;
+    }
+    &.onclick
+    {
+        cursor: pointer;
+    }
+    &.tag
+    {
+        background-color: @corp_yellow;
+        border-width: 1px;
+        border-style: solid;
+        border-color: @corp_black;
+        margin: 1px 2px 1px 2px;
+        padding: 1px 3px 1px 3px;
+        font-size: smaller;
+        display: inline-block;
+        .radial_gradiented;
+        .rounded(4px);
+        &:hover
+        {
+            .transform(scale(1.1));
+            .transition(all 0.2s ease);
+        }
+    }
+    &.taghighlite
+    {
+        border-color: green;
+        border-width: 2px;
+    }
+    &.tagchanging
+    {
+        border-color: coral;
+        border-width: 2px;
+    }
+    &.continuereading
+    {
+        .cellborder();
+        .rounded();
+        font-weight: bolder;
+        padding: 2px 2px 2px 2px;
+        &:hover
+        {
+            .gradiented_block()
+        }
+    }
+}
+
+table
+{
+    &.head
+    {
+        width: 100%;
+        tr
+        {
+            td
+            {
+                .alignBlockCenter;
+                border-style: none;
+                &.logo
+                {
+                    width: 32px;
+                    height: 32px;
+                }
+                &.title
+                {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+

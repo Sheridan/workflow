@@ -1,0 +1,67 @@
+table
+{
+  &.calendar
+  {
+    width: 100%;
+    .cellborder();
+    th
+    {
+      .gradiented_block;
+      .cellborder();
+      width: 14.3%
+    }
+    td
+    {
+      .cellborder();
+      .alignBlockCenter;
+      vertical-align: top;
+      &.clickable
+      {
+        .clickable;
+        &:hover
+        {
+          .gradiented_block(lighten(orange, 40%), lighten(orange, 50%));
+        }
+      }
+      div
+      {
+        &.date
+        {
+          width: 100%;
+          .gradiented_block(white, darken(white, 10%));
+          .cellborder();
+          text-align: center;
+          .defaultFont(14pt);
+        }
+        &.holyday
+        {
+          .gradiented_block(lighten(red, 30%), lighten(red, 40%));
+          .opacity(0.6);
+        }
+        &.body
+        {
+          .alignBlockCenter;
+          display: flex;
+          padding: 3px 3px 3px 3px;
+        }
+      }
+    }
+  }
+}
+div
+{
+  &.date_change_control
+  {
+    .alignBlockCenter;
+    text-align: center;
+    width: 100%;
+    span
+    {
+      &.month_caption
+      {
+        .defaultFont(16pt);
+        font-weight: bold;
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+form
+{
+    padding: 5px 5px 5px 5px;
+    .alignBlockCenter;
+    input
+    {
+        border-width: 1px;
+        border-style: solid;
+        border-color: @corp_black;
+        &[type="text"], &[type="password"]
+        {
+            width: 100%;
+        }
+        &[type="text"]
+        {
+            &[readonly="readonly"], &[readonly]
+            {
+                background-color: #cccccc;
+            }
+        }
+        &[type="submit"]
+        {
+            border-color: @corp_red;
+        }
+    }
+    select
+    {
+        border-width: 1px;
+        border-style: solid;
+        border-color: @corp_black;
+        width: 100%;
+    }
+    textarea
+    {
+        .defaultFont(10pt);
+        border-width: 1px;
+        border-style: solid;
+        border-color: @corp_black;
+        width: 100%;
+        min-height: 100px;
+        &.dialog
+        {
+
+        }
+    }
+    label
+    {
+        display: block;
+        .cellborder;
+        .gradiented_block;
+    }
+    table
+    {
+        tr
+        {
+            td
+            {
+                label { display: block; }
+                input { width: 100%; }
+                padding: 3px 3px 3px 3px;
+            }
+        }
+    }
+}
+table
+{
+    &.form
+    {
+        width: 100%;
+        td
+        {
+          margin: 1px 1px 1px 1px;
+        }
+    }
+    &.control_table
+    {
+      width: 100%;
+      th
+      {
+        &.control_table_caption
+        {
+          .cellborder;
+          .gradiented_block;
+        }
+      }
+      td
+      {
+        &.control_table_control
+        {
+          .alignBlockCenter;
+        }
+      }
+    }
+}
+div
+{
+    &.dialog
+    {
+        textarea
+        {
+            .defaultFont(10pt);
+            height: 80%;
+            width: 99%;
+            border-width: 1px;
+            border-style: solid;
+            border-color: @corp_black;
+            min-height: 100px;
+        }
+    }
+}
+
+button
+{
+    &.helper_button
+    {
+      .opacity(0.6);
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      right: 1px;
+      bottom: 1px;
+    }
+}
+
+img
+{
+  &.value_edit_button
+  {
+    .opacity(0.6);
+    .clickable();
+    .cellborder();
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 1px;
+    bottom: 1px;
+  }
+}

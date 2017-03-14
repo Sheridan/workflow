@@ -1,0 +1,21 @@
+#!/bin/bash
+
+soap_dir=./z_soap
+
+
+
+function make_soap()
+{
+    rm -fr $soap_dir
+    rm ./libzsoap.so
+    mkdir $soap_dir
+    wsdl2h -o $soap_dir/z_soap.h -x http://mail.sergos.ru/service/wsdl/ZimbraUserService.wsdl
+    soapcpp2 -CLwx -d$soap_dir -I /usr/share/gsoap/import/ $soap_dir/z_soap.h
+    g++ -o libzsoap.so -shared -fpic -W -lgsoap++ -L$soap_dir -I/usr/share/gsoap/import/ stdsoap2.cpp $soap_dir/soapC.cpp $soap_dir/soapClient.cpp
+}
+
+#make_soap
+
+rm ./soap_test 
+g++ -o soap_test -Wall -W -lzsoap -L. soap.cpp 
+LD_LIBRARY_PATH="./" ./soap_test 

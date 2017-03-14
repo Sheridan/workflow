@@ -1,0 +1,151 @@
+@import "base.less";
+
+.backgroundImageRotated(@image, @image_size)
+{
+    &:before
+    {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        //z-index: 1;
+        background-image: url(@image);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        .transform(translateZ(0));
+        .rotate;
+        opacity:0.4;
+    }
+    position:relative;
+    overflow:hidden;
+    width: @image_size;
+    height: @image_size;
+}
+
+.image(@width: 100%, @height: 100%)
+{
+    //z-index: 2;
+    width: @width;
+    height: @height;
+    //position: inherit;
+    //display: block;
+    .rounded;
+}
+
+.imageContainer(@dpl: table, @image_width: auto, @image_height: auto)
+{
+    background-color: white;
+    width  :  @image_width;
+    height :  @image_height;
+    padding: 0.2% 0.2% 0.2% 0.2%;
+    margin : 0.5% 0.5% 0.5% 0.5%;
+    display: @dpl;
+
+    .rounded_block;
+    .shadowed_block(0, 0, 10px, 0, @corp_black);
+}
+
+div
+{
+    &.image_container_full
+    {
+        .imageContainer;
+        img
+        {
+            &.full
+            {
+                .image;
+            }
+        }
+    }
+    &.image_container_full_resized
+    {
+        .imageContainer(table, @full_scaled_width, @full_scaled_height);
+        img
+        {
+            &.full_resized
+            {
+                .image(auto, auto);
+                //max-width: ;
+               // max-height: @full_scaled_height;
+            }
+        }
+    }
+    &.image_container_preview
+    {
+        .imageContainer(inline-flex, @preview_width, @preview_height);
+        img
+        {
+            &.preview
+            {
+                .image(@preview_width, @preview_height);
+            }
+        }
+    }
+    &.image_container_thumbnail
+    {
+        .imageContainer(inline-flex, @thumbnail_width, @thumbnail_height);
+        img
+        {
+            &.thumbnail
+            {
+                .image(@thumbnail_width, @thumbnail_height);
+            }
+        }
+    }
+    &.image_container_icon
+    {
+        .imageContainer(inline-flex, @icon_width, @icon_height);
+        img
+        {
+            &.icon
+            {
+                .image(@icon_width, @icon_height);
+            }
+        }
+    }
+    &.loading
+    {
+        .backgroundImageRotated("/media/img/icons/loop.svg", 64px);
+    }
+}
+
+.buttonImage(@size)
+{
+    width: @size;
+    height: 100%;
+    vertical-align: baseline;
+    cursor: pointer;
+    &:hover
+    {
+        .transform(scale(1.3));
+        .transition(all 0.2s ease);
+    }
+}
+
+img
+{
+    &.button
+    {
+        .buttonImage(16px);
+    }
+    &.button32
+    {
+        .buttonImage(32px);
+    }
+    &.unvisible
+    {
+        display: none;
+    }
+    &.logo
+    {
+        .image(32px, 32px);
+    }
+    &.page-qr
+    {
+        width: 96px;
+        height: 96px;
+    }
+}

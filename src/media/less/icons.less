@@ -1,0 +1,38 @@
+.svgIcon(@icon_name, @icon_width, @icon_height)
+{
+    div.icon
+    {
+        background-image: url(@icon_name);
+        background-repeat: no-repeat;
+        background-size: @icon_width @icon_height;
+        width: @icon_width;
+        height: @icon_height;
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+    }
+}
+
+
+.headerIcon(@icon_name)
+{
+    .svgIcon(@icon_name, 16px, 16px);
+    div.icon
+    {
+        float: right;
+    }
+}
+
+img
+{
+  &.icon_button
+  {
+    width: 18px;
+    height: 18px;
+    vertical-align: text-bottom;
+    .clickable;
+    &.icon_help
+    {
+      float: right;
+    }
+  }
+}

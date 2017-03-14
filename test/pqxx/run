@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rm ./pqxxt
+g++ -o pqxxt -std=c++11 -Wall -W -lpqxx  main.cpp cdatabase.cpp cquery.cpp
+./pqxxt

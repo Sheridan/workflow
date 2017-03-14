@@ -1,0 +1,274 @@
+@import "base.less";
+@import "icons.less";
+@import "images.less";
+
+@scaleMultiplier: 1.3;
+
+div
+{
+    &.tags_container
+    {
+        .gradiented_block;
+        .rounded;
+        padding: 7px 7px 7px 7px;
+        .alignBlockCenter;
+        div
+        {
+            &.tags_header
+            {
+                text-align: right;
+            }
+            &.tags_body
+            {
+                padding: 16px 16px 16px 16px;
+                overflow: hidden;
+                border-style: solid;
+                border-width: 1px;
+                border-color: @corp_black;
+            }
+            &.tags_footer
+            {
+                span
+                {
+                    &.media_navigator
+                    {
+                        span
+                        {
+                            &.tags_pages
+                            {
+                                a
+                                {
+                                    &.tags_page_link
+                                    {
+                                        background-color: white;
+                                        border-width: 1px;
+                                        border-style: solid;
+                                        border-color: @corp_black;
+                                        margin: 1px 2px 1px 2px;
+                                        padding: 1px 3px 1px 3px;
+                                        cursor: pointer;
+                                        &:hover
+                                        {
+                                            .transform(scale(1.3));
+                                            .transition(all 0.2s ease);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    &.media_container
+    {
+        .gradiented_block;
+        .rounded;
+        padding: 7px 7px 7px 7px;
+        .alignBlockCenter;
+        div
+        {
+            &.media_header
+            {
+                text-align: right;
+            }
+            &.media_body
+            {
+                padding: (@thumbnail_height/5) (@thumbnail_width/5) (@thumbnail_height/5) (@thumbnail_width/5);
+                div
+                {
+                    &.media_item
+                    {
+                        float: left;
+                        .imageContainer(table-cell);
+                        img
+                        {
+                            .image;
+                        }
+                        position: relative;
+                        &:hover
+                        {
+                            background-color: @corp_yellow;
+                            .transform(scale(@scaleMultiplier));
+                            .transition(all 0.4s ease);
+                            z-index: 3;
+                        }
+                    }
+                    &.loading
+                    {
+                        .backgroundImageRotated("/media/img/icons/loop.svg", @thumbnail_height);
+                    }
+
+                }
+                overflow: hidden;
+            }
+            &.media_footer
+            {
+                span
+                {
+                    &.media_navigator
+                    {
+                        span
+                        {
+                            &.media_pages
+                            {
+                                a
+                                {
+                                    &.media_page_link
+                                    {
+                                        background-color: white;
+                                        border-width: 1px;
+                                        border-style: solid;
+                                        border-color: @corp_black;
+                                        margin: 1px 2px 1px 2px;
+                                        padding: 1px 3px 1px 3px;
+                                        cursor: pointer;
+                                        &:hover
+                                        {
+                                            .transform(scale(1.3));
+                                            .transition(all 0.2s ease);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.table_container
+    {
+        .gradiented_block;
+        .rounded;
+        padding: 7px 7px 7px 7px;
+        .alignBlockCenter;
+        width: 100%;
+        div
+        {
+            &.table_body
+            {
+                table
+                {
+                    &.dtable
+                    {
+                        border-collapse: collapse;
+                        width: 100%;
+                        .alignBlockCenter;
+                        .rounded;
+                        thead
+                        {
+                            tr
+                            {
+                                &.dtable_head
+                                {
+                                    th
+                                    {
+                                        &.dtable_head_cell
+                                        {
+                                            .cellborder;
+                                            .gradiented_block;
+                                            cursor: pointer;
+                                            &.sorting
+                                            {
+                                                .headerIcon('/media/img/icons/navicon.svg');
+                                            }
+                                            &.sorting_asc
+                                            {
+                                                .headerIcon('/media/img/icons/arrow-down-b.svg');
+                                            }
+                                            &.sorting_desc
+                                            {
+                                                .headerIcon('/media/img/icons/arrow-up-b.svg');
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        tbody
+                        {
+                            tr
+                            {
+                                td
+                                {
+                                    .cellborder;
+                                    padding: 2px 3px 2px 3px;
+                                    margin: 0px 0px 0px 0px;
+                                }
+                                &.articles
+                                {
+                                    td
+                                    {
+                                        .alignBlockCenter;
+                                        div
+                                        {
+                                            &.icon
+                                            {
+                                                float: left;
+                                                margin: 2px 3px 2px 3px;
+                                            }
+                                            &.caption
+                                            {
+                                                margin: 2px 3px 2px 3px;
+                                                .alignBlockCenter;
+                                            }
+                                            &.control
+                                            {
+                                                float: right;
+                                                margin: 2px 3px 2px 3px;
+                                                .alignBlockCenter;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.table_header
+            {
+                text-align: right;
+            }
+            &.table_footer
+            {
+                span
+                {
+                    &.table_navigator
+                    {
+                        span
+                        {
+                            &.table_pages
+                            {
+                                a
+                                {
+                                    &.table_page_link
+                                    {
+                                        background-color: white;
+                                        border-width: 1px;
+                                        border-style: solid;
+                                        border-color: @corp_black;
+                                        margin: 1px 2px 1px 2px;
+                                        padding: 1px 3px 1px 3px;
+                                        cursor: pointer;
+                                        &:hover
+                                        {
+                                            .transform(scale(1.3));
+                                            .transition(all 0.2s ease);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

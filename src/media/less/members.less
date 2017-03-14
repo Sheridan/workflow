@@ -1,0 +1,79 @@
+table
+{
+    &.members_list
+    {
+        width: 100%;
+        padding: 7px 7px 7px 7px;
+        .alignBlockCenter;
+        tr
+        {
+            &:hover
+            {
+                background-color: @corp_gray;
+            }
+            th
+            {
+                .cellborder;
+                .gradiented_block;
+            }
+            td
+            {
+                &.datetime
+                {
+                    .consolasFont(12pt);
+                }
+                .cellborder;
+                text-align: center;
+                position: relative;
+            }
+        }
+    }
+    &.member_show
+    {
+        width: 100%;
+        padding: 7px 7px 7px 7px;
+        .alignBlockCenter;
+        tr
+        {
+            th
+            {
+                .cellborder;
+                .gradiented_block;
+            }
+            td
+            {
+                &.fio
+                {
+                    .defaultFont(20pt);
+                }
+                .cellborder;
+                text-align: center;
+                position: relative;
+            }
+        }
+    }
+    &.member_rights
+    {
+        width: 100%;
+        padding: 7px 7px 7px 7px;
+        .alignBlockCenter;
+        tr
+        {
+            th
+            {
+                .cellborder;
+                .gradiented_block;
+            }
+            td
+            {
+                &.fio
+                {
+                    .defaultFont(20pt);
+                }
+                .cellborder;
+                text-align: center;
+                position: relative;
+            }
+        }
+    }
+}

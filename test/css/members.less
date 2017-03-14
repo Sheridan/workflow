@@ -1,0 +1,80 @@
+@import "base.less";
+
+table
+{
+    &.members_list
+    {
+        width: 100%;
+        .defaultFont(10pt);
+        padding: 7px 7px 7px 7px;
+        margin: 7px 7px 7px 7px;
+        tr
+        {
+            &:hover
+            {
+                background-color: @corp_gray;
+            }
+            th
+            {
+                .cellborder;
+                .gradiented_block;
+            }
+            td
+            {
+                .cellborder;
+                text-align: center;
+                position: relative;
+            }
+        }
+    }
+    &.member_show
+    {
+        width: 100%;
+        .defaultFont(10pt);
+        padding: 7px 7px 7px 7px;
+        margin: 7px 7px 7px 7px;
+        tr
+        {
+            th
+            {
+                .cellborder;
+                .gradiented_block;
+            }
+            td
+            {
+                &.fio
+                {
+                    .defaultFont(20pt);
+                }
+                .cellborder;
+                text-align: center;
+                position: relative;
+            }
+        }
+    }
+    &.member_rights
+    {
+        width: 100%;
+        .defaultFont(10pt);
+        padding: 7px 7px 7px 7px;
+        margin: 7px 7px 7px 7px;
+        tr
+        {
+            th
+            {
+                .cellborder;
+                .gradiented_block;
+            }
+            td
+            {
+                &.fio
+                {
+                    .defaultFont(20pt);
+                }
+                .cellborder;
+                text-align: center;
+                position: relative;
+            }
+        }
+    }
+}

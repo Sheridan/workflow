@@ -1,0 +1,262 @@
+table
+{
+    &.tasklist
+    {
+        width: 100%;
+        .alignBlockCenter;
+        tr
+        {
+            td
+            {
+                width: 50%;
+                vertical-align: top;
+            }
+        }
+        th
+        {
+          .cellborder;
+          .gradiented_block;
+          font-weight: bold;
+        }
+    }
+    &.task_table
+    {
+        width: 100%;
+        padding: 7px 7px 7px 7px;
+        .alignBlockCenter;
+        tr
+        {
+            th
+            {
+                width: 25%;
+                .cellborder;
+                .gradiented_block;
+            }
+            td
+            {
+                .cellborder;
+                text-align: center;
+                position: relative;
+                .alignBlockCenter;
+                div
+                {
+                  &.performer
+                  {
+                    position: relative;
+                    width: 70%;
+                    display: inline-block;
+                  }
+                }
+            }
+        }
+    }
+    &.task_changelog
+    {
+        width: 100%;
+        padding: 7px 7px 7px 7px;
+        .alignBlockCenter;
+        tr
+        {
+            th
+            {
+                .cellborder;
+                .gradiented_block;
+            }
+            td
+            {
+                .cellborder;
+                text-align: center;
+                position: relative;
+                &.description
+                {
+                    text-align: justify;
+                }
+            }
+        }
+    }
+}
+div
+{
+    &.tasks_container
+    {
+      width: 100%;
+      .alignBlockCenter;
+    }
+    &.tasklist
+    {
+        .alignBlockCenter;
+        div
+        {
+            .clickable;
+            .rounded_block;
+            .defaultFont(14pt);
+            .cellborder;
+            padding: 3px 5px 3px 5px;
+            margin: 8px 3px 8px 3px;
+            &.status_open
+            {
+                background-color: fadeout(@open, 80%);
+                .shadowed_block(3px, 3px, 3px, 3px, fadeout(@open, 70%));
+            }
+            &.status_closed
+            {
+                background-color: fadeout(@closed, 80%);
+                .shadowed_block(3px, 3px, 3px, 3px, fadeout(@closed, 70%));
+            }
+            &.status_not_assigned
+            {
+                background-color: fadeout(@not_assigned, 80%);
+                .shadowed_block(3px, 3px, 3px, 3px, fadeout(@not_assigned, 70%));
+            }
+            &:hover
+            {
+                background-color: fadeout(@corp_yellow, 80%);
+            }
+        }
+    }
+   &.dialog
+    {
+        display: none;
+        .defaultFont(10pt);
+    }
+    &.task_description
+    {
+        .defaultFont(14pt);
+        padding: 7px 7px 7px 7px;
+        margin: 7px 7px 7px 7px;
+        .cellborder;
+        white-space: pre-wrap;
+        text-align: justify;
+        position: relative;
+    }
+    &.priority_low
+    {
+        color: @pri_low;
+        .defaultFont(14pt);
+    }
+    &.priority_default
+    {
+        color: @pri_default;
+        .defaultFont(14pt);
+    }
+    &.priority_high
+    {
+        color: @pri_high;
+        .defaultFont(14pt);
+    }
+
+  &.tasks_calendar_stat
+  {
+    .cellborder;
+    .alignBlockCenter;
+    width: 100%;
+    div
+    {
+      &.title
+      {
+        .cellborder;
+        text-align: center;
+      }
+      &.today
+      {
+        white-space: nowrap;
+        &_opened
+        {
+          background-color: fadeout(@open, 80%);
+        }
+        &_control
+        {
+          background-color: fadeout(@corp_red, 80%);
+        }
+        &_closed
+        {
+          background-color: fadeout(@closed, 80%);
+        }
+        &_started
+        {
+          background-color: fadeout(yellow, 80%);
+        }
+      }
+      table
+      {
+        &.task_stat_counts
+        {
+          width: 100%;
+          td
+          {
+            width: 50%;
+            border-style: none;
+            border-width: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+span
+{
+    &.priority
+    {
+        width:  16px;
+        height: 16px;
+        float:  left;
+        margin-right: 7px;
+        .cellborder(black);
+        &_low
+        {
+            background-color: @pri_low;
+        }
+        &_default
+        {
+            background-color: @pri_default;
+        }
+        &_high
+        {
+            background-color: @pri_high;
+        }
+    }
+    &.identificator
+    {
+      .consolasFont(12pt);
+      font-weight: bold;
+    }
+    &.progress
+    {
+        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+        width: 100%;
+        display: block;
+        background-color: rgba(0, 0, 0, 0.25);
+        span
+        {
+            padding: 0px 0px 0px 01px;
+            margin: 0px 0px 0px 0px;
+            display: block;
+            .cellborder;
+            &.low_profile
+            {
+                height: 3px;
+            }
+            &.full_profile
+            {
+                height: 12pt;
+            }
+            &.critical
+            {
+                background-color: @corp_red;
+            }
+            &.overdue
+            {
+                background-color: red;
+            }
+            &.normal
+            {
+                background-color: green;
+            }
+            &.warning
+            {
+                background-color: orange;
+            }
+        }
+    }
+}

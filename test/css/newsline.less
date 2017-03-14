@@ -1,0 +1,83 @@
+@import "base.less";
+@import "animations.less";
+@control_size: 16px;
+
+div
+{
+    &.articlesline
+    {
+        width: @default_content_width;
+        max-width: @default_content_width;
+        margin: 16px auto 16px auto;
+        padding: 5px 5px 5px 5px;
+        .alignBlockCenter();
+        table
+        {
+            width: 100%;
+            max-width: 100%;
+            border-style: solid;
+            border-width: 1px;
+            border-color: @corp_black;
+            border-collapse: collapse;
+            .gradiented_block();
+            tr
+            {
+                &.item
+                {
+                    cursor: pointer;
+                    td
+                    {
+
+                        &.icon
+                        {
+                            width: @icon_width;
+                            height: @icon_height;
+                            padding: (@icon_width/8) (@icon_height/8) (@icon_width/8) (@icon_height/8);
+                            .alignBlockCenter();
+                        }
+                        &.content
+                        {
+                            text-align: justify;
+                            a
+                            {
+                                &.contentlink
+                                {
+                                    .baskervilleFont(12pt);
+                                    margin: 1px 20px 1px 2px;
+                                    font-weight: bolder;
+                                }
+                            }
+                            span
+                            {
+                                .defaultFont(10pt);
+                                line-height: 14pt;
+                            }
+                        }
+                        &.date
+                        {
+                            .defaultFont(10pt);
+                            text-align: right;
+                            .alignBlockCenter();
+                            width: 10%;
+                        }
+                    }
+                    &:hover
+                    {
+                        border-style: solid;
+                        border-width: 1px;
+                        border-color: @corp_black;
+                        .gradiented_block();
+                        .cellborder;
+                    }
+                }
+                th
+                {
+                    .cellborder;
+                    .gradiented_block;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+

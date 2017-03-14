@@ -1,0 +1,51 @@
+table
+{
+    &.divisions_list
+    {
+        width: 100%;
+        padding: 7px 7px 7px 7px;
+        .alignBlockCenter;
+        tr
+        {
+            &:hover
+            {
+                background-color: @corp_gray;
+            }
+            th
+            {
+                .cellborder;
+                .gradiented_block;
+            }
+            td
+            {
+                .cellborder;
+                text-align: center;
+                position: relative;
+                &.division
+                {
+                    text-align: justify;
+                }
+            }
+        }
+    }
+    &.division_show
+    {
+        width: 100%;
+        padding: 7px 7px 7px 7px;
+        .alignBlockCenter;
+        tr
+        {
+            th
+            {
+                .cellborder;
+                .gradiented_block;
+            }
+            td
+            {
+                .cellborder;
+                text-align: center;
+                position: relative;
+            }
+        }
+    }
+}

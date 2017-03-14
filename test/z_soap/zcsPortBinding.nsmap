@@ -1,0 +1,17 @@
+
+#include "soapH.h"
+SOAP_NMAC struct Namespace namespaces[] =
+{
+	{"SOAP-ENV", "http://schemas.xmlsoap.org/soap/envelope/", "http://www.w3.org/*/soap-envelope", NULL},
+	{"SOAP-ENC", "http://schemas.xmlsoap.org/soap/encoding/", "http://www.w3.org/*/soap-encoding", NULL},
+	{"xsi", "http://www.w3.org/2001/XMLSchema-instance", "http://www.w3.org/*/XMLSchema-instance", NULL},
+	{"xsd", "http://www.w3.org/2001/XMLSchema", "http://www.w3.org/*/XMLSchema", NULL},
+	{"ns3", "urn:zimbra", NULL, NULL},
+	{"ns4", "urn:zimbraAccount", NULL, NULL},
+	{"ns5", "urn:zimbraMail", NULL, NULL},
+	{"ns6", "urn:zimbraRepl", NULL, NULL},
+	{"ns7", "urn:zimbraSync", NULL, NULL},
+	{"ns1", "http://www.zimbra.com/wsdl/ZimbraService.wsdl", NULL, NULL},
+	{"ns8", "urn:zimbraVoice", NULL, NULL},
+	{NULL, NULL, NULL, NULL}
+};

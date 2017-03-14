@@ -1,0 +1,72 @@
+table
+{
+    &.filelist
+    {
+        width: 100%;
+        padding: 7px 7px 7px 7px;
+        .alignBlockCenter;
+        tr
+        {
+            th
+            {
+                .cellborder;
+                .gradiented_block;
+            }
+            td
+            {
+                .cellborder;
+                text-align: center;
+                &.size
+                {
+                    text-align: right;
+                    .consolasFont(12pt);
+                }
+                &.name
+                {
+                    text-align: left;
+                }
+            }
+            &:hover
+            {
+                background-color: fadeout(@corp_gray, 80%);
+            }
+        }
+    }
+}
+
+div
+{
+  &.filelist_controls
+  {
+    width: 100%;
+    text-align: right;
+  }
+  &.filelist
+  {
+    width: 100%;
+    .alignBlockCenter;
+  }
+  &.thumbnail_container
+  {
+    .alignBlockCenter;
+    div
+    {
+      &.thumbnail
+      {
+        .alignBlockCenter;
+        display: inline-block;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        div
+        {
+          &.description
+          {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}

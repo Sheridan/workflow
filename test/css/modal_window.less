@@ -1,0 +1,49 @@
+@import "base.less";
+
+div
+{
+    &.modal
+    {
+        .rounded;
+        .gradiented_block;
+        .shadowed_block(0px, 0px, 50px, 50px, @default_shadow_color);
+        border-width: thin;
+        border-style: solid;
+        top: 10px;
+        left: 10px;
+        width: 95%;
+        position: fixed;
+        z-index: 50;
+        div
+        {
+            &.caption
+            {
+                .rounded;
+                .gradiented_block;
+                width: 95%;
+                height: 20px;
+                padding: 10px 10px 10px 10px;
+                span
+                {
+                    &.caption
+                    {
+                        float: left;
+                        padding: 2px 2px 2px 2px;
+                    }
+                }
+                a
+                {
+                    float: right;
+                }
+            }
+        }
+    }
+    &.unvisible
+    {
+        display: none;
+    }
+    &.visible
+    {
+        display: block;
+    }
+}

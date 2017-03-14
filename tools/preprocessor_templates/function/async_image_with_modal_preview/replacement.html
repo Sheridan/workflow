@@ -1,0 +1,29 @@
+"
+<a class='onclick action' onclick='callback_$1_$2_$3_show();'><div class='image_container_$2 loading' id='$2_$1_image_container'></div></a>
+<script type='text/javascript'>
+    function callback_$1_$2_$3_show()
+    {
+	showModal('mw_$1_$2_$3');
+    }
+    function callback_$1_$2_$3_close()
+    {
+	closeModal('mw_$1_$2_$3');
+    }
+    loadImage('$2_$1_image_container', '$2_$1_image', '/$4/$2.jpg', '$2', undefined, '$5', undefined);
+</script>
+<div class='modal unvisible' id='mw_$1_$2_$3'>
+    <div class='caption'>
+	<span class='caption'>$5</span>
+	<a class='onclick' onclick='callback_$1_$2_$3_close();'>X</a>
+    </div>
+    <script type='text/javascript'>
+	initModal('mw_$1_$2_$3');
+    </script>
+    <div class='content' id='$1_content'>
+	<a class='onclick' onclick='callback_$1_$2_$3_close();'><div class='image_container_$3 loading' id='$3_$1_image_container'></div></a>
+	<script type='text/javascript'>
+	    loadImage('$3_$1_image_container', '$3_$1_image', '/$4/$3.jpg', '$3', undefined, '$5', undefined);
+	</script>
+    </div>
+</div>
+"

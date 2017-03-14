@@ -1,0 +1,203 @@
+@import "base.less";
+
+table
+{
+    .defaultFont(10pt);
+    &.tasklist
+    {
+        width: 100%;
+        tr
+        {
+            td
+            {
+                width: 50%;
+                div
+                {
+                    &.tasklist
+                    {
+                        div
+                        {
+                            cursor: pointer;
+/*                            .shadowed_block;*/
+                            .rounded_block;
+                            //.opacity(0.5);
+                            .defaultFont(12pt);
+                            .cellborder;
+                            padding: 3px 5px 3px 5px;
+                            margin: 8px 3px 8px 3px;
+                            &.status_open
+                            {
+                                background-color: fadeout(@open, 80%);
+                                .shadowed_block(3px, 3px, 3px, 3px, fadeout(@open, 70%));
+                            }
+                            &.status_closed
+                            {
+                                background-color: fadeout(@closed, 80%);
+                                .shadowed_block(3px, 3px, 3px, 3px, fadeout(@closed, 70%));
+                            }
+                            &.status_not_assigned
+                            {
+                                background-color: fadeout(@not_assigned, 80%);
+                                .shadowed_block(3px, 3px, 3px, 3px, fadeout(@not_assigned, 70%));
+                            }
+                            &:hover
+                            {
+                                background-color: fadeout(@corp_yellow, 80%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+div
+{
+   &.dialog
+    {
+        display: none;
+        .defaultFont(10pt);
+    }
+    &.task_description
+    {
+        .defaultFont(14pt);
+        padding: 7px 7px 7px 7px;
+        margin: 7px 7px 7px 7px;
+        .cellborder;
+        white-space: pre-wrap;
+        text-align: justify;
+        position: relative;
+    }
+    &.priority_low
+    {
+        color: @pri_low;
+        .defaultFont(14pt);
+    }
+    &.priority_default
+    {
+        color: @pri_default;
+        .defaultFont(14pt);
+    }
+    &.priority_high
+    {
+        color: @pri_high;
+        .defaultFont(14pt);
+    }
+}
+span
+{
+    &.priority
+    {
+        width:  16px;
+        height: 16px;
+        float:  left;
+        margin-right: 7px;
+        .cellborder(black);
+        &_low
+        {
+            background-color: @pri_low;
+        }
+        &_default
+        {
+            background-color: @pri_default;
+        }
+        &_high
+        {
+            background-color: @pri_high;
+        }
+    }
+}
+
+span
+{
+    &.progress
+    {
+        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+        width: 100%;
+        display: block;
+        background-color: rgba(0, 0, 0, 0.25);
+        span
+        {
+            padding: 0px 0px 0px 01px;
+            margin: 0px 0px 0px 0px;
+            display: block;
+            .cellborder;
+            &.low_profile
+            {
+                height: 3px;
+            }
+            &.full_profile
+            {
+                height: 12pt;
+            }
+            &.critical
+            {
+                background-color: @corp_red;
+            }
+            &.overdue
+            {
+                background-color: red;
+            }
+            &.normal
+            {
+                background-color: green;
+            }
+            &.warning
+            {
+                background-color: orange;
+            }
+        }
+    }
+}
+
+table
+{
+    &.task_table
+    {
+        width: 100%;
+        .defaultFont(10pt);
+        padding: 7px 7px 7px 7px;
+        margin: 7px 7px 7px 7px;
+        tr
+        {
+            th
+            {
+                width: 33%;
+                .cellborder;
+                .gradiented_block;
+            }
+            td
+            {
+                .cellborder;
+                text-align: center;
+                position: relative;
+            }
+        }
+    }
+    &.task_changelog
+    {
+        width: 100%;
+        .defaultFont(10pt);
+        padding: 7px 7px 7px 7px;
+        margin: 7px 7px 7px 7px;
+        tr
+        {
+            th
+            {
+                .cellborder;
+                .gradiented_block;
+            }
+            td
+            {
+                .cellborder;
+                text-align: center;
+                position: relative;
+                &.description
+                {
+                    text-align: justify;
+                }
+            }
+        }
+    }
+}

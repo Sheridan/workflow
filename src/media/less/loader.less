@@ -1,0 +1,86 @@
+div
+{
+    &.container
+    {
+      .cellborder;
+      .alignBlockCenter;
+      .gradiented_block;
+      padding: 5px 5px 5px 5px;
+        div
+        {
+            &.header
+            {
+                display: inline-block;
+                width: 100%;
+                div
+                {
+                    &.page_count_controller
+                    {
+                        float: right;
+                        margin: 5px 5px 5px 5px;
+                        div
+                        {
+                            &.page_count_counter
+                            {
+                                .consolasFont(12pt);
+                                display: inline;
+                            }
+                        }
+                    }
+                }
+            }
+            &.body
+            {
+                vertical-align: top;
+            }
+            &.footer
+            {
+                display: inline-block;
+                width: 100%;
+                div
+                {
+                    &.pages_walk_controller
+                    {
+                        float: right;
+                        margin: 5px 5px 5px 5px;
+                        div
+                        {
+                            &.pages_walk_pages
+                            {
+                                .consolasFont(12pt);
+                                display: inline;
+                                div
+                                {
+                                    &.page
+                                    {
+                                        display: inline;
+                                        .cellborder;
+                                        margin: 2px 2px 2px 2px;
+                                        padding: 2px 2px 2px 2px;
+                                        min-width: 16px;
+                                        height: 14px;
+                                        .clickable;
+                                        text-align: center;
+                                        &:hover
+                                        {
+                                            background-color: darken(@default_background_color, 20%);
+                                        }
+                                    }
+                                    &.selected
+                                    {
+                                        font-weight: bold;
+                                        background-color: @corp_yellow;
+                                        &:hover
+                                        {
+                                            background-color: darken(@corp_yellow, 20%);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

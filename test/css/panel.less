@@ -1,0 +1,46 @@
+@import "base.less";
+
+div
+{
+    &.panel
+    {
+        div
+        {
+            &.caption
+            {
+                .gradiented_block;
+                .rounded;
+                padding: 5px 5px 5px 5px;
+                font-weight: bold;
+                text-align: center;
+                cursor: pointer;
+                &:hover
+                {
+                    border-color: @corp_yellow;
+                }
+            }
+            &.content
+            {
+            }
+            &.unvisible
+            {
+                display: none;
+            }
+            &.visible
+            {
+                display: block;
+            }
+        }
+        .gradiented_block;
+        .rounded;
+        .shadowed_block;
+        .alignBlockCenter;
+        padding: 5px 5px 5px 5px;
+        margin: 5px 0px 10px 0px;
+    }
+    &.flow
+    {
+        display: table;
+    }
+}
+

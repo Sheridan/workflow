@@ -1,0 +1,81 @@
+#!/bin/bash
+
+. ./linux-environment
+debug="OFF"
+use_clang="OFF"
+verbose_build="OFF"
+delete_before_build=0
+current_path=$PWD
+install_path=$install_path_release
+
+while getopts "dvchmr:" opt
+do
+  case $opt in
+    d)
+      debug="ON"
+      install_path=$install_path_debug
+      ;;
+    c)
+      use_clang="ON"
+      ;;
+    v)
+      verbose_build="ON"
+      ;;
+    m)
+      delete_before_build=1
+      ;;
+    h)
+      echo "-d	Build debug"
+      echo "-v	Verbode build"
+      echo "-c	Build with clang"
+      echo "-h	This"
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      ;;
+  esac
+done
+
+
+
+
+
+function run_cmd
+{
+  name=$1
+  cmd=$2
+  echo "--> $name ($cmd)"
+  echo $cmd >> ${console_build_path}/commands
+  $cmd
+  if (($?>0))
+  then
+    exit 1
+  fi
+}
+
+function build()
+{
+  path=$1
+  object_build_path="$console_build_path/$path"
+  echo "------------------- Building ${path} in ${object_build_path} -------------------"
+  if (($delete_before_build == 1))
+  then
+    rm -vrf "${object_build_path}"
+  fi
+  object_path="$current_path/$path"
+  mkdir -p $object_build_path
+  cd $object_build_path
+  run_cmd "CMake" "cmake -DCMAKE_INSTALL_PREFIX='$install_path' -DPREPROCESS=ON -DVERBOSE_BUILD=$verbose_build -DBUILD_DEBUG=$debug -DUSE_CLANG=$use_clang  $object_path"
+  run_cmd "make" "make -j$build_threads"
+  run_cmd "install" "make install"
+  cd $build_path
+}
+
+mkdir -p $console_build_path
+mkdir -p $install_path
+if (($delete_before_build == 1))
+then
+  rm -vrf "${install_path}/bin"
+fi
+build "."
+cd $current_path

@@ -1,0 +1,53 @@
+
+div
+{
+    &.page_control
+    {
+        width: 100%;
+        padding: 0px 1px 0px 1px;
+/*        display: initial;*/
+        .alignBlockCenter;
+        div
+        {
+            &.page_control_header
+            {
+                padding: 5px 3px 0px 3px;
+                display: flex;
+                background-color: lightgray;
+                div
+                {
+                    &.page_control_caption
+                    {
+                        display: inline;
+                        padding: 5px 3px 5px 3px;
+                        .cellborder;
+                        .gradiented_block;
+                        .clickable;
+                    }
+                    &.page_control_caption_selected
+                    {
+                        .gradiented_block(@default_gradient_stop, @default_gradient_start);
+                    }
+                }
+            }
+            &.page_control_body
+            {
+                .alignBlockCenter;
+                div
+                {
+                    &.page_control_tab
+                    {
+                        .cellborder;
+                        .alignBlockCenter;
+                        padding: 5px 3px 5px 3px;
+                        display: none;
+                    }
+                    &.page_control_tab_selected
+                    {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

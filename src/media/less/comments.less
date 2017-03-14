@@ -1,0 +1,40 @@
+div
+{
+    &.comment
+    {
+        width: 100%;
+        .cellborder;
+        .alignBlockCenter;
+        > div
+        {
+            &.comment_caption
+            {
+                .cellborder;
+                .consolasFont(10pt);
+                text-align: left;
+                .gradiented_block;
+            }
+            &.comment_body
+            {
+                .cellborder;
+                .defaultFont(12pt);
+                white-space: pre-wrap;
+                text-align: justify;
+                padding: 7px 7px 7px 7px;
+                .gradiented_block(white, darken(white, 10%));
+                div
+                {
+                  &.changelog_comment
+                  {
+                    .cellborder;
+                    .defaultFont(9pt);
+                    padding: 7px 7px 7px 7px;
+                    margin-top: 7px;
+                    .gradiented_block(darken(white, 10%), white);
+                  }
+                }
+            }
+        }
+    }
+}
+

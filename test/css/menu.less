@@ -1,0 +1,147 @@
+@import "base.less";
+
+.itemBorder(shadowed, @item_margin, @border_width)
+{
+    .gradiented_block;
+    .rounded;
+}
+.itemBorder(flat, @item_margin, @border_width)
+{
+    .gradiented_block;
+}
+.itemBorder(@_, @item_margin, @border_width)
+{
+    visibility:   visible;
+    opacity:      1;
+    border-style: solid;
+    border-width: @border_width;
+    border-color: @corp_gray;
+    padding: (@item_margin / 2 - @border_width) (@item_margin - @border_width) (@item_margin / 2 - @border_width) (@item_margin - @border_width);
+}
+
+.menuBorder(shadowed)
+{
+    .gradiented_block;
+    .rounded;
+    .shadowed_block;
+}
+.menuBorder(flat)
+{
+    .gradiented_block;
+    .rounded;
+}
+.menuBorder(@_)
+{
+    visibility: visible;
+    opacity:      1;
+}
+
+.rightMenu(@level, @style, @item_margin, @item_width)
+{
+    margin-left: -@item_margin+((@level - 2)*@item_width);
+    > li
+    {
+        > ul
+        {
+            margin-left: (@item_width * (@level - 2))  - @item_margin;
+            margin-top: -@item_margin * 2;
+            width:       @item_width;
+        }
+    }
+    > li:hover
+    {
+        > ul
+        {
+            .menuBorder(@style);
+        }
+    }
+}
+
+.menu(@style, @item_margin, @item_width, @border_width)
+{
+    .alignBlockCenter;
+    .top_block_opacity;
+    width: 100%;
+    ul, li
+    {
+        margin:     0px;
+        padding:    0px;
+        list-style: none;
+    }
+    ul.menu
+    {
+        width: 100%;
+        .menuBorder(@style);
+        display: table;
+        > li
+        {
+            float:      left;
+            text-align: center;
+            padding:    @item_margin/2 @item_margin;
+            margin:     @item_margin/2;
+            cursor:     pointer;
+            > ul
+            {
+                .rightMenu(2, @style, @item_margin, @item_width);
+                > li
+                {
+                    > ul
+                    {
+                        .rightMenu(3, @style, @item_margin, @item_width);
+                    }
+                }
+            }
+            &:hover
+            {
+                .itemBorder(@style, @item_margin, @border_width);
+                > ul
+                {
+                    .menuBorder(@style);
+                }
+            }
+            ul
+            {
+                visibility: hidden;
+                opacity:    0;
+                position:   absolute;
+                text-align: left;
+                z-index:    10;
+                width:      @item_width;
+                margin-top: @item_margin/2;
+                .animate;
+            }
+            li
+            {
+                z-index: 5;
+                padding: (@item_margin / 2) @item_margin (@item_margin / 2) @item_margin;
+                &:hover
+                {
+                    .itemBorder(@style, @item_margin, @border_width);
+                }
+                table
+                {
+                    &.aricle_menu_item
+                    {
+                        border-collapse: collapse;
+                        border-style: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+nav
+{
+    .menu(shadowed, 10px, 250px, 1px);
+}
+
+div
+{
+    &.dropdown
+    {
+        display: block;
+        float: right;
+        .menu(flat, 5px, 200px, 1px);
+    }
+}
